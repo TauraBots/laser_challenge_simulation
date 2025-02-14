@@ -2,9 +2,6 @@
 <?xml-model href="http://sdformat.org/schemas/root.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <sdf version="1.5">
   <world name="default">
-    <!-- <plugin name="mrs_gazebo_link_attacher_plugin" filename="libMRSGazeboLinkAttacherPlugin.so"/> -->
-    <plugin name="mrs_gazebo_static_transform_republisher_plugin" filename="libMrsGazeboCommonResources_StaticTransformRepublisher.so"/>
-
     <!-- coordinate system {-->
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
@@ -104,14 +101,6 @@
       </link>
     </model>
 
-    <!-- GUI frame synchronization {-->
-    <plugin name="mrs_gazebo_rviz_cam_synchronizer" filename="libMrsGazeboCommonResources_RvizCameraSynchronizer.so" >
-      <target_frame_id>gazebo_user_camera</target_frame_id>
-      <world_origin_frame_id>uav1/gps_origin</world_origin_frame_id>
-      <frame_to_follow>uav1::base_link</frame_to_follow>
-    </plugin>
-    <!--}-->
-
     <!-- user camera {-->
     <gui>
       <camera name="camera">
@@ -135,7 +124,7 @@
     <model name="takeoff_platform">
       <include>
         <uri>model://takeoff_platform</uri>
-        <pose>0.0 0.0 -0.0 0.0 -0.0 0.0</pose>
+        <pose>0.0 0.0 0.0 0.0 -0.0 0.0</pose>
       </include>
     </model>
 
@@ -143,60 +132,16 @@
     <model name="banner">
       <include>
         <uri>model://banner</uri>
-        <pose>-0.75 -6.9 0.0 0.0 0.0 0.0</pose>
+        <pose>-0.75 -7.0 0.5 0.0 0.0 0.0</pose>
       </include>
     </model>
 
     <model name="banner_2">
       <include>
         <uri>model://banner_2</uri>
-        <pose>-0.65 1.0 0.0 0.0 0.0 -1.57</pose>
+        <pose>-0.75 1.0 0.5 0.0 0.0 -1.57</pose>
       </include>
-    </model>
-    
-    <!-- THE LANDING PLATFORM MODEL -->
-
-    <model name="landing_platform_A">
-      <include>
-        <uri>model://suspended_landing_platform</uri>
-        <pose>2.75 0.0 1.50 0 -0 0</pose>
-      </include>
-    </model>
-
-    <model name="landing_platform_B">
-      <include>
-        <uri>model://suspended_landing_platform</uri>
-        <pose>0.0 -6.0 1.0 0 -0 0</pose>
-      </include>
-    </model>
-
-    <!-- <model name="landing_platform_C">
-      <include>
-        <uri>model://landing_platform</uri>
-        <pose>1.5 -0 0.005 0 -0 0</pose>
-      </include>
-    </model>
-
-    <model name="landing_platform_D">
-      <include>
-        <uri>model://landing_platform</uri>
-        <pose>1 -5 0.005 0 -0 0</pose>
-      </include>
-    </model>
-
-    <model name="landing_platform_E">
-      <include>
-        <uri>model://landing_platform</uri>
-        <pose>6.5 -3 0.005 0 -0 0</pose>
-      </include>
-    </model>
-
-    <model name="landing_platform_F">
-      <include>
-        <uri>model://landing_platform</uri>
-        <pose>4 -1.5 0.005 0 -0 0</pose>
-      </include>
-    </model> -->
+    </model> 
 
   </world>
 </sdf>

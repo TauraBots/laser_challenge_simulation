@@ -1,87 +1,129 @@
+#!/usr/bin/env python3
+
 import random
-import rospy
-from gazebo_msgs.srv import SpawnModel
+import rclpy
+from rclpy.node import Node
+from gazebo_msgs.srv import SpawnEntity
 from geometry_msgs.msg import Pose, Point, Quaternion
 
-# Lista das posições pré-definidas
-bases_positions = [
-    (6.5, -0.5, 0.05), (6.5, -1.5, 0.05), (6.5, -2.5, 0.05), (6.5, -3.5, 0.05), (6.5, -4.5, 0.05), (6.5, -5.5, 0.05),
-    (5.5, 0.5, 0.05), (5.5, -0.5, 0.05), (5.5, -1.5, 0.05), (5.5, -2.5, 0.05), (5.5, -3.5, 0.05), (5.5, -4.5, 0.05), (5.5, -5.5, 0.05),
-    (4.5, 0.5, 0.05), (4.5, -0.5, 0.05), (4.5, -1.5, 0.05), (4.5, -2.5, 0.05), (4.5, -3.5, 0.05), (4.5, -4.5, 0.05), (4.5, -5.5, 0.05),
-    (3.5, -1.5, 0.05), (3.5, -2.5, 0.05), (3.5, -3.5, 0.05), (3.5, -4.5, 0.05), (3.5, -5.5, 0.05), 
-    (2.5, -1.5, 0.05), (2.5, -2.5, 0.05), (2.5, -3.5, 0.05), (2.5, -4.5, 0.05), (2.5, -5.5, 0.05),
-    (1.5, -1.5, 0.05), (1.5, -2.5, 0.05), (1.5, -3.5, 0.05), (1.5, -4.5, 0.05), (1.5, -5.5, 0.05),
-    (0.5, -2.5, 0.05), (0.5, -3.5, 0.05), (0.5, -4.5, 0.05), 
-    (0.0, -6.0, 1.5), (2.75, 0.0, 1.0)
-]
+class BaseSpawner(Node):
+    def __init__(self):
+        super().__init__('base_spawner')
+        self.client = self.create_client(SpawnEntity, '/spawn_entity')
+        while not self.client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('service not available, waiting again...')
 
-def spawn(model_name, x, y, z, model_path):
-    rospy.loginfo(f"Preparing to spawn model: {model_name} at ({x}, {y}, {z})")
-    pose = Pose(Point(x, y, z), Quaternion(0, 0, 0, 1))
-    try:
-        with open(model_path, "r") as model_file:
-            model_xml = model_file.read()
-    except FileNotFoundError:
-        rospy.logerr(f"Model file not found: {model_path}")
-        return
+        self.declare_parameter('challenge_stage', 'stage_one')
+        self.declare_parameter('bases_spawn', '')
 
-    try:
-        spawn_model_prox(model_name, model_xml, "", pose, "world")
-        rospy.loginfo(f"Spawned {model_name} at position ({x}, {y}, {z})")
-    except rospy.ServiceException as e:
-        rospy.logerr(f"Failed to spawn model {model_name}: {e}")
+    def spawn(self, model_name, x, y, z, model_path):
+        self.get_logger().info(f"Preparing to spawn model: {model_name} at ({x}, {y}, {z})")
+        pose = Pose(position=Point(x=x, y=y, z=z), orientation=Quaternion(x=0.0, y=0.0, z=0.0, w=1.0))
+        try:
+            with open(model_path, "r") as model_file:
+                model_xml = model_file.read()
+        except FileNotFoundError:
+            self.get_logger().error(f"Model file not found: {model_path}")
+            return
 
-def spawn_bases(bases_spawn):
-    for idx in bases_spawn:
-        rospy.loginfo(f"Spawning base at index: {idx}")
-        model_name = f"base_{idx}"
-        x, y, z = bases_positions[idx - 1]
-        spawn(model_name, x, y, z, "/home/wagner/mrs_apptainer/user_ros_workspace/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+        request = SpawnEntity.Request()
+        request.name = model_name
+        request.xml = model_xml
+        request.initial_pose = pose
+        request.robot_namespace = ""
+        request.reference_frame = "world"
 
-def spawn_qr_boxes(bases_spawn):
-    qr_codes = ['a', 'b', 'c', 'd', 'e']  # Lista de QRCode
-    random.shuffle(qr_codes)  # Embaralha os códigos
+        future = self.client.call_async(request)
+        rclpy.spin_until_future_complete(self, future)
+        if future.result() is not None:
+            self.get_logger().info(f"Spawned {model_name} at position ({x}, {y}, {z})")
+        else:
+            self.get_logger().error(f"Failed to spawn model {model_name}: {future.exception()}")
 
-    # Spawn QR codes nas bases
-    for idx in bases_spawn:
-        if not qr_codes:
-            rospy.logwarn("Não há mais QR Codes disponíveis para spawnear.")
-            break
-        code = qr_codes.pop()  # Remove e pega o último código da lista
-        model_name = f"qrcode_box_{code}"
-        x, y, z = bases_positions[idx - 1]
-        z += 0.15  # Eleva a posição Z do QR Code
-        model_path = f"/home/wagner/mrs_apptainer/user_ros_workspace/src/laser_challenge_simulation/models/qrcode_box_{code}/model.sdf"
-        spawn(model_name, x, y, z, model_path)
+    def generate_random_positions(self, num_bases, x_limits, y_limits, z_limits, min_distance):
+        positions = []
+        while len(positions) < num_bases:
+            x = random.uniform(x_limits[0], x_limits[1])
+            y = random.uniform(y_limits[0], y_limits[1])
+            z = random.uniform(z_limits[0], z_limits[1])  # Gera um valor aleatório para Z
+            collision = False
+            for pos in positions:
+                # Verifica a distância em 3D (X, Y, Z)
+                distance = ((x - pos[0])**2 + (y - pos[1])**2 + (z - pos[2])**2)**0.5
+                if distance < min_distance:
+                    collision = True
+                    break
+            if not collision:
+                positions.append((x, y, z))  # Adiciona a posição com Z aleatório
+        return positions
 
-if __name__ == "__main__":
-    rospy.init_node("base_spawner")
-    rospy.wait_for_service('/gazebo/spawn_sdf_model')
-    spawn_model_prox = rospy.ServiceProxy('/gazebo/spawn_sdf_model', SpawnModel)
+    def spawn_bases(self, num_bases, x_limits, y_limits, z_limits, min_distance):
+        positions = self.generate_random_positions(num_bases, x_limits, y_limits, z_limits, min_distance)
+        for idx, (x, y, z) in enumerate(positions):
+            model_name = f"base_{idx}"
+            self.spawn(model_name, x, y, z, "/home/renata/workspace/src/laser_challenge_simulation/models/landing_platform/model.sdf")
 
-    challenge_stage = rospy.get_param("~challenge_stage", "stage_one")
-    bases_spawn_param = rospy.get_param("~bases_spawn", "")
+def main(args=None):
+    rclpy.init(args=args)
+    base_spawner = BaseSpawner()
 
-    # Limpa a string e converte para lista de inteiros
-    if bases_spawn_param:
-        # Remove colchetes e divide a string em elementos
-        bases_spawn_param = bases_spawn_param.strip('[]')  # Remove colchetes
-        bases_spawn_param = bases_spawn_param.split(",")  # Divide em partes
-        bases_spawn_param = [int(idx.strip()) for idx in bases_spawn_param if idx.strip()]  # Converte para inteiros
+    challenge_stage = base_spawner.get_parameter('challenge_stage').get_parameter_value().string_value
 
     if challenge_stage == "stage_one":
-        if not bases_spawn_param:
-            bases_spawn_param = random.sample(range(1, 38), 3)
-        spawn_bases(bases_spawn_param)
+        # Limites para as 5 bases normais
+        x_limits_normal = (1.75, 6.25)  # x entre 0.5 e 7.5
+        y_limits_normal = (0, -6)  # y entre 0.5 e 6.0
+        z_limits_normal = (0.0, 1.5)  # z aleatório entre 0.0 e 1.5
+
+        # Limites para a base especial
+        x_limits_special = (0.25, 0.75)  # x entre 0.5 e 6.0
+        y_limits_special = (-1.5, -6)  # y entre 6.0 e 7.5
+        z_fixed_special = 1.5          # z fixo em 1.5
+
+        # Distância mínima entre as bases (1.0 metro para evitar colisões)
+        min_distance = 2.0
+
+        # Spawn das 5 bases normais
+        base_spawner.get_logger().info("Spawning 5 bases normais...")
+        positions_normal = base_spawner.generate_random_positions(
+            5, x_limits_normal, y_limits_normal, z_limits_normal, min_distance
+        )
+        for idx, (x, y, z) in enumerate(positions_normal):
+            model_name = f"base_normal_{idx}"
+            base_spawner.spawn(model_name, x, y, z, "/home/renata/workspace/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+
+        # Spawn da base especial
+        base_spawner.get_logger().info("Spawning 1 base especial...")
+        x_special = random.uniform(x_limits_special[0], x_limits_special[1])
+        y_special = random.uniform(y_limits_special[0], y_limits_special[1])
+        z_special = z_fixed_special
+
+        # Verifica se a base especial colide com as bases normais
+        collision = False
+        for pos in positions_normal:
+            distance = ((x_special - pos[0])**2 + (y_special - pos[1])**2 + (z_special - pos[2])**2)**0.5
+            if distance < min_distance:
+                collision = True
+                break
+
+        if not collision:
+            model_name = "base_especial"
+            base_spawner.spawn(model_name, x_special, y_special, z_special, "/home/renata/workspace/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+        else:
+            base_spawner.get_logger().warn("Não foi possível spawnar a base especial sem colisão. Tente novamente.")
+    
     elif challenge_stage == "stage_two":
-        rospy.loginfo("Fase 2: Não há spawns nesta fase.")
+        # Implementar lógica para a fase dois
     elif challenge_stage == "stage_three":
-        if not bases_spawn_param:
-            bases_spawn_param = random.sample(range(1, 38), 3)
-        spawn_bases(bases_spawn_param)        
-        bases_spawn_param.append(39)
-        bases_spawn_param.append(40)
-        spawn_qr_boxes(bases_spawn_param)
+        # Implementar lógica para a fase três
+        pass
     elif challenge_stage == "stage_four":
-        bases_spawn_param = random.sample(range(1, 38), 4)
-        spawn_bases(bases_spawn_param)
+        # Implementar lógica para a fase quatro
+        pass
+
+    rclpy.spin(base_spawner)
+    base_spawner.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == "__main__":
+    main()
