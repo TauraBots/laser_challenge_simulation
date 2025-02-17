@@ -11,7 +11,7 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     pkg_share = FindPackageShare(package='laser_challenge_simulation').find('laser_challenge_simulation')
-    world_gazebo_path = os.path.join(pkg_share, 'worlds/challenge_world.world')
+    world_gazebo_path = os.path.join(pkg_share, 'worlds/custom_empty.world')
     install_dir = FindPackageShare(package='laser_challenge_simulation').find('laser_challenge_simulation')
     world_models_path = os.path.join(pkg_share, 'models')
 

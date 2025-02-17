@@ -73,12 +73,21 @@ def main(args=None):
     home_dir = os.path.expanduser("~")
     challenge_stage = base_spawner.get_parameter('challenge_stage').get_parameter_value().string_value
 
-    if challenge_stage == "stage_one":
-        base_spawner.get_logger().info("Spawning cluttered environment...")
-        cluttered_env_name = "cluttered_environment"
-        cluttered_env_position = (-0.75, -1.0, 0.0)  # Posição do cluttered_environment
-        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
+    # geral para todas as fases
+    base_spawner.get_logger().info("Spawning arena...")
+    base_spawner.spawn("arena", -0.75, -7.0, 0.001, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/arena_spawn/model.sdf")
 
+    base_spawner.get_logger().info("Spawning cluttered environment...")
+    base_spawner.spawn("cluttered_environment", -0.75, -1.0, 0.0, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
+
+    base_spawner.get_logger().info("Spawning banner...")
+    base_spawner.spawn("banner", -0.75, -7.0, 0.5, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/banner/model.sdf")
+    base_spawner.spawn("banner2", -0.75, 1.0, 0.5, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/banner_2/model.sdf")
+
+    base_spawner.get_logger().info("Spawning takeoff_platform...")
+    base_spawner.spawn("takeoff_platform", 0.0, 0.0, 0.0, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/takeoff_platform/model.sdf")
+
+    if challenge_stage == "stage_one":
         # Limites para as 5 bases normais
         x_limits_normal = (1.75, 6.25)  # x entre 0.5 e 7.5
         y_limits_normal = (0, -6)  # y entre 0.5 e 6.0
@@ -122,11 +131,6 @@ def main(args=None):
             base_spawner.get_logger().warn("Não foi possível spawnar a base especial sem colisão. Tente novamente.")
     
     elif challenge_stage == "stage_two":
-        base_spawner.get_logger().info("Spawning cluttered environment...")
-        cluttered_env_name = "cluttered_environment"
-        cluttered_env_position = (-0.75, -1.0, 0.0)  # Posição do cluttered_environment
-        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
-
         # Limites para as 3 bases aleatórias
         x_limits_random = (1.75, 6.25)  # x entre 0.5 e 7.5
         y_limits_random = (0, -6)  # y entre -0.5 e -7.5
@@ -158,10 +162,8 @@ def main(args=None):
             base_spawner.spawn(model_name, x, y, z, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
 
     elif challenge_stage == "stage_three": 
-        base_spawner.get_logger().info("Spawning cluttered environment...")
-        cluttered_env_name = "cluttered_environment"
-        cluttered_env_position = (-0.75, -1.0, 0.0)  # Posição do cluttered_environment
-        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
+      pass
+
     elif challenge_stage == "stage_four":
         # Posição fixa para a base da fase 4
         fixed_position = (3.0, -3.25, 0.0)  # Base fixa
@@ -172,11 +174,6 @@ def main(args=None):
         base_spawner.spawn(model_name, fixed_position[0], fixed_position[1], fixed_position[2],
                            home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
         
-        base_spawner.get_logger().info("Spawning cluttered environment...")
-        cluttered_env_name = "cluttered_environment"
-        cluttered_env_position = (-0.75, -1.0, 0.0)  # Posição do cluttered_environment
-        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
-    
     rclpy.spin(base_spawner)
     base_spawner.destroy_node()
     rclpy.shutdown()
