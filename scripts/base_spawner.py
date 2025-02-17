@@ -83,7 +83,7 @@ def main(args=None):
         # Limites para a base especial
         x_limits_special = (0.25, 0.75)  # x entre 0.5 e 6.0
         y_limits_special = (-1.5, -6)  # y entre 6.0 e 7.5
-        z_fixed_special = 1.7          # z fixo em 1.5
+        z_fixed_special = 1.52          # z fixo em 1.5
 
         # Distância mínima entre as bases (1.0 metro para evitar colisões)
         min_distance = 2.0
@@ -130,9 +130,9 @@ def main(args=None):
 
         # Posições fixas para as 3 bases especiais
         fixed_positions = [
-            (0.25, -2.5, 1.7),  # Base fixa 1
-            (0.25, -4.0, 1.7),  # Base fixa 2
-            (0.25, -5.5, 1.7)   # Base fixa 3
+            (0.25, -2.5, 1.52),  # Base fixa 1
+            (0.25, -4.0, 1.52),  # Base fixa 2
+            (0.25, -5.5, 1.52)   # Base fixa 3
         ]
 
         # Distância mínima entre as bases (1.0 metro para evitar colisões em X-Y)
