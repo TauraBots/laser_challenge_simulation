@@ -5,6 +5,7 @@ import rclpy
 from rclpy.node import Node
 from gazebo_msgs.srv import SpawnEntity
 from geometry_msgs.msg import Pose, Point, Quaternion
+import so
 
 class BaseSpawner(Node):
     def __init__(self):
@@ -15,6 +16,8 @@ class BaseSpawner(Node):
 
         self.declare_parameter('challenge_stage', 'stage_one')
         self.declare_parameter('bases_spawn', '')
+
+        self.home_dir = os.path.expanduser("~")
 
     def spawn(self, model_name, x, y, z, model_path):
         self.get_logger().info(f"Preparing to spawn model: {model_name} at ({x}, {y}, {z})")
@@ -61,7 +64,7 @@ class BaseSpawner(Node):
         positions = self.generate_random_positions(num_bases, x_limits, y_limits, z_limits, min_distance)
         for idx, (x, y, z) in enumerate(positions):
             model_name = f"base_{idx}"
-            self.spawn(model_name, x, y, z, "/home/renata/workspace/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+            self.spawn(model_name, x, y, z, self.home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
 
 def main(args=None):
     rclpy.init(args=args)
@@ -73,7 +76,7 @@ def main(args=None):
         base_spawner.get_logger().info("Spawning cluttered environment...")
         cluttered_env_name = "cluttered_environment"
         cluttered_env_position = (-0.75, -1.0, 0.0)  # Posição do cluttered_environment
-        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], "/home/renata/workspace/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
+        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], self.home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
 
         # Limites para as 5 bases normais
         x_limits_normal = (1.75, 6.25)  # x entre 0.5 e 7.5
@@ -95,7 +98,7 @@ def main(args=None):
         )
         for idx, (x, y, z) in enumerate(positions_normal):
             model_name = f"base_normal_{idx}"
-            base_spawner.spawn(model_name, x, y, z, "/home/renata/workspace/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+            base_spawner.spawn(model_name, x, y, z, self.home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
 
         # Spawn da base especial
         base_spawner.get_logger().info("Spawning 1 base especial...")
@@ -113,7 +116,7 @@ def main(args=None):
 
         if not collision:
             model_name = "base_especial"
-            base_spawner.spawn(model_name, x_special, y_special, z_special, "/home/renata/workspace/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+            base_spawner.spawn(model_name, x_special, y_special, z_special, self.home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
         else:
             base_spawner.get_logger().warn("Não foi possível spawnar a base especial sem colisão. Tente novamente.")
     
@@ -121,7 +124,7 @@ def main(args=None):
         base_spawner.get_logger().info("Spawning cluttered environment...")
         cluttered_env_name = "cluttered_environment"
         cluttered_env_position = (-0.75, -1.0, 0.0)  # Posição do cluttered_environment
-        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], "/home/renata/workspace/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
+        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], self.home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
 
         # Limites para as 3 bases aleatórias
         x_limits_random = (1.75, 6.25)  # x entre 0.5 e 7.5
@@ -145,19 +148,19 @@ def main(args=None):
         )
         for idx, (x, y, z) in enumerate(positions_random):
             model_name = f"base_random_{idx}"
-            base_spawner.spawn(model_name, x, y, z, "/home/renata/workspace/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+            base_spawner.spawn(model_name, x, y, z, self.home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
 
         # Spawn das 3 bases fixas
         base_spawner.get_logger().info("Spawning 3 bases fixas...")
         for idx, (x, y, z) in enumerate(fixed_positions):
             model_name = f"base_fixa_{idx}"
-            base_spawner.spawn(model_name, x, y, z, "/home/renata/workspace/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+            base_spawner.spawn(model_name, x, y, z, self.home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
 
     elif challenge_stage == "stage_three": 
         base_spawner.get_logger().info("Spawning cluttered environment...")
         cluttered_env_name = "cluttered_environment"
         cluttered_env_position = (-0.75, -1.0, 0.0)  # Posição do cluttered_environment
-        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], "/home/renata/workspace/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
+        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], self.home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
     elif challenge_stage == "stage_four":
         # Posição fixa para a base da fase 4
         fixed_position = (3.0, -3.25, 0.0)  # Base fixa
@@ -166,12 +169,12 @@ def main(args=None):
         base_spawner.get_logger().info("Spawning 1 base fixa...")
         model_name = "base_fixa_fase4"
         base_spawner.spawn(model_name, fixed_position[0], fixed_position[1], fixed_position[2],
-                           "/home/renata/workspace/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+                           self.home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
         
         base_spawner.get_logger().info("Spawning cluttered environment...")
         cluttered_env_name = "cluttered_environment"
         cluttered_env_position = (-0.75, -1.0, 0.0)  # Posição do cluttered_environment
-        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], "/home/renata/workspace/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
+        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], self.home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
     
     rclpy.spin(base_spawner)
     base_spawner.destroy_node()
