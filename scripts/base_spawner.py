@@ -70,6 +70,11 @@ def main(args=None):
     challenge_stage = base_spawner.get_parameter('challenge_stage').get_parameter_value().string_value
 
     if challenge_stage == "stage_one":
+        base_spawner.get_logger().info("Spawning cluttered environment...")
+        cluttered_env_name = "cluttered_environment"
+        cluttered_env_position = (-0.75, -1.0, 0.0)  # Posição do cluttered_environment
+        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], "/home/renata/workspace/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
+
         # Limites para as 5 bases normais
         x_limits_normal = (1.75, 6.25)  # x entre 0.5 e 7.5
         y_limits_normal = (0, -6)  # y entre 0.5 e 6.0
@@ -78,7 +83,7 @@ def main(args=None):
         # Limites para a base especial
         x_limits_special = (0.25, 0.75)  # x entre 0.5 e 6.0
         y_limits_special = (-1.5, -6)  # y entre 6.0 e 7.5
-        z_fixed_special = 1.5          # z fixo em 1.5
+        z_fixed_special = 1.7          # z fixo em 1.5
 
         # Distância mínima entre as bases (1.0 metro para evitar colisões)
         min_distance = 2.0
@@ -113,14 +118,61 @@ def main(args=None):
             base_spawner.get_logger().warn("Não foi possível spawnar a base especial sem colisão. Tente novamente.")
     
     elif challenge_stage == "stage_two":
-        # Implementar lógica para a fase dois
-    elif challenge_stage == "stage_three":
-        # Implementar lógica para a fase três
-        pass
-    elif challenge_stage == "stage_four":
-        # Implementar lógica para a fase quatro
-        pass
+        base_spawner.get_logger().info("Spawning cluttered environment...")
+        cluttered_env_name = "cluttered_environment"
+        cluttered_env_position = (-0.75, -1.0, 0.0)  # Posição do cluttered_environment
+        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], "/home/renata/workspace/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
 
+        # Limites para as 3 bases aleatórias
+        x_limits_random = (1.75, 6.25)  # x entre 0.5 e 7.5
+        y_limits_random = (0, -6)  # y entre -0.5 e -7.5
+        z_limits_random = (0.0, 1.5)  # z aleatório entre 0.0 e 1.5
+
+        # Posições fixas para as 3 bases especiais
+        fixed_positions = [
+            (0.25, -2.5, 1.7),  # Base fixa 1
+            (0.25, -4.0, 1.7),  # Base fixa 2
+            (0.25, -5.5, 1.7)   # Base fixa 3
+        ]
+
+        # Distância mínima entre as bases (1.0 metro para evitar colisões em X-Y)
+        min_distance = 1.0
+
+        # Spawn das 3 bases aleatórias
+        base_spawner.get_logger().info("Spawning 3 bases aleatórias...")
+        positions_random = base_spawner.generate_random_positions(
+            3, x_limits_random, y_limits_random, z_limits_random, min_distance
+        )
+        for idx, (x, y, z) in enumerate(positions_random):
+            model_name = f"base_random_{idx}"
+            base_spawner.spawn(model_name, x, y, z, "/home/renata/workspace/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+
+        # Spawn das 3 bases fixas
+        base_spawner.get_logger().info("Spawning 3 bases fixas...")
+        for idx, (x, y, z) in enumerate(fixed_positions):
+            model_name = f"base_fixa_{idx}"
+            base_spawner.spawn(model_name, x, y, z, "/home/renata/workspace/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+
+    elif challenge_stage == "stage_three": 
+        base_spawner.get_logger().info("Spawning cluttered environment...")
+        cluttered_env_name = "cluttered_environment"
+        cluttered_env_position = (-0.75, -1.0, 0.0)  # Posição do cluttered_environment
+        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], "/home/renata/workspace/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
+    elif challenge_stage == "stage_four":
+        # Posição fixa para a base da fase 4
+        fixed_position = (3.0, -3.25, 0.0)  # Base fixa
+
+        # Spawn da base fixa
+        base_spawner.get_logger().info("Spawning 1 base fixa...")
+        model_name = "base_fixa_fase4"
+        base_spawner.spawn(model_name, fixed_position[0], fixed_position[1], fixed_position[2],
+                           "/home/renata/workspace/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+        
+        base_spawner.get_logger().info("Spawning cluttered environment...")
+        cluttered_env_name = "cluttered_environment"
+        cluttered_env_position = (-0.75, -1.0, 0.0)  # Posição do cluttered_environment
+        base_spawner.spawn(cluttered_env_name, cluttered_env_position[0], cluttered_env_position[1], cluttered_env_position[2], "/home/renata/workspace/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
+    
     rclpy.spin(base_spawner)
     base_spawner.destroy_node()
     rclpy.shutdown()

@@ -16,29 +16,29 @@
                 <izz>0.166667</izz>
               </inertia>
             </inertial>
-            <pose>0 0 0 0 0 0</pose>
+            <pose>0 0 0 0 0 -1.5708</pose>
             <visual name="walls_visual">
                 <geometry>
                     <mesh>
-                      <uri>model://cluttered_environment/untitle.dae</uri>
+                      <uri>model://cluttered_environment/meshes/cluttered_environment_walls.obj</uri>
                       <scale>0.01 0.01 0.01</scale>
                     </mesh>
                 </geometry>
                 <transparency>0</transparency>
                 <cast_shadows>1</cast_shadows>
                 <material>
-                    <ambient>0.5 0.5 0.5 1</ambient>
-                    <diffuse>1 1 1 1</diffuse>
-                    <specular>0.5 0.5 0.5 1</specular>
+                    <ambient>0.6 0.3 0.1 1</ambient> <!-- Cor ambiente (branco) -->
+                    <diffuse>0.6 0.3 0.1 1</diffuse> <!-- Cor difusa (branco) -->
+                    <specular>0.6 0.3 0.1 1</specular> <!-- Cor especular (cinza claro) -->
                 </material>
             </visual>
             <collision name='collision'>
               <laser_retro>0</laser_retro>
               <max_contacts>10</max_contacts>
-              <pose>0 0 0 0 0 0</pose>
+              <pose>0 0 0 0 0 -1.5708</pose>
               <geometry>
                 <mesh>
-                  <uri>model://cluttered_environment/untitle.dae</uri>
+                  <uri>model://cluttered_environment/meshes/cluttered_environment_walls.obj</uri>
                   <scale>0.01 0.01 0.01</scale>
                 </mesh>
               </geometry>
@@ -46,8 +46,8 @@
         </link>
         <static>1</static>
         <allow_auto_disable>1</allow_auto_disable>
-        <!--
-         cluttered environment windows
+        
+        <!-- cluttered environment windows -->
         <link name="windows_link">
             <inertial>
               <mass>1</mass>
@@ -60,7 +60,7 @@
                 <izz>0.166667</izz>
               </inertia>
             </inertial>
-            <pose>0 0 0 0 0 0</pose>
+            <pose>0 0 0 0 0 -1.5708</pose>
             <visual name="windows_visual">
                 <geometry>
                     <mesh>
@@ -71,15 +71,17 @@
                 <transparency>0</transparency>
                 <cast_shadows>1</cast_shadows>
                 <material>
-                    <ambient>0.5 0.5 0.5 1</ambient>
-                    <diffuse>1 1 1 1</diffuse>
-                    <specular>0.5 0.5 0.5 1</specular>
+                    <script>
+                      <ambient>1 1 1 1</ambient> <!-- Cor ambiente (branco) -->
+                    <diffuse>1 1 1 1</diffuse> <!-- Cor difusa (branco) -->
+                    <specular>0.5 0.5 0.5 1</specular> <!-- Nome do arquivo .mtl -->
+                    </script>
                 </material>
             </visual>
             <collision name='collision'>
               <laser_retro>0</laser_retro>
               <max_contacts>10</max_contacts>
-              <pose>0 0 0 0 0 0</pose>
+              <pose>0 0 0 0 0 -1.5708</pose>
               <geometry>
                 <mesh>
                   <uri>model://cluttered_environment/meshes/cluttered_environment_windows.obj</uri>
@@ -87,6 +89,6 @@
                 </mesh>
               </geometry>
             </collision>
-          </link> -->
+          </link>
     </model>
 </sdf>
