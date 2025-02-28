@@ -6,6 +6,7 @@ This package contains the Gazebo files (models and worlds) related to the LASER 
 - Arena
 - Banner
 - Barcode Shelf
+- Cluttered Environment
 - Landing Platform
 - Measure Gas
 - Pipe
@@ -15,8 +16,11 @@ This package contains the Gazebo files (models and worlds) related to the LASER 
 - Unit Box
 
 ## Worlds
-- Stage One
-- Stage Two
-- Stage Three
-- Stage Four
-- Test
+- Challenge World
+
+## How to run
+```
+ros2 launch laser_challenge_simulation challenge_world.launch.py 
+
+ros2 run laser_challenge_simulation base_spawner.py --ros-args -p challenge_stage:=stage_{stage number}
+```

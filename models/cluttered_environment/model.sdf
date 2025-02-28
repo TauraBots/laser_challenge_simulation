@@ -35,7 +35,7 @@
             <collision name='collision'>
               <laser_retro>0</laser_retro>
               <max_contacts>10</max_contacts>
-              <pose>0 0 0 0 0 -1.5708</pose>
+              <pose>0 0 0 0 0 0</pose>
               <geometry>
                 <mesh>
                   <uri>model://cluttered_environment/meshes/cluttered_environment_walls.obj</uri>
@@ -81,7 +81,7 @@
             <collision name='collision'>
               <laser_retro>0</laser_retro>
               <max_contacts>10</max_contacts>
-              <pose>0 0 0 0 0 -1.5708</pose>
+              <pose>0 0 0 0 0 0</pose>
               <geometry>
                 <mesh>
                   <uri>model://cluttered_environment/meshes/cluttered_environment_windows.obj</uri>
@@ -118,7 +118,7 @@
             <collision name='collision'>
               <laser_retro>0</laser_retro>
               <max_contacts>10</max_contacts>
-              <pose>0 0 1.5 -1.5708 0 -1.5708</pose>
+              <pose>0 0 0 0 0 0</pose>
               <geometry>
                 <mesh>
                   <uri>model://cluttered_environment/meshes/cluttered_environment_roof.obj</uri>

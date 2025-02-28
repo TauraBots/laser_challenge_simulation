@@ -85,6 +85,7 @@
         </surface>
       </collision>
     </link>
+    <!--
     <link name='pilar_1'>
       <inertial>
         <mass>1</mass>
@@ -168,7 +169,8 @@
           </contact>
         </surface>
       </collision>
-    </link>
+      </link>
+    -->
     <link name='pilar_2'>
       <inertial>
         <mass>1</mass>

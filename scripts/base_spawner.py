@@ -74,24 +74,76 @@ def main(args=None):
     challenge_stage = base_spawner.get_parameter('challenge_stage').get_parameter_value().string_value
 
     # geral para todas as fases
-    base_spawner.get_logger().info("Spawning arena...")
-    base_spawner.spawn("arena", -0.75, -7.0, 0.001, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/arena_spawn/model.sdf")
-
     base_spawner.get_logger().info("Spawning cluttered environment...")
     base_spawner.spawn("cluttered_environment", -0.75, -1.0, 0.0, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/cluttered_environment/model.sdf")
-
-    base_spawner.get_logger().info("Spawning banner...")
-    base_spawner.spawn("banner", -0.75, -7.0, 0.5, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/banner/model.sdf")
-    base_spawner.spawn("banner2", -0.75, 1.0, 0.5, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/banner_2/model.sdf")
-
-    base_spawner.get_logger().info("Spawning takeoff_platform...")
-    base_spawner.spawn("takeoff_platform", 0.0, 0.0, 0.0, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/takeoff_platform/model.sdf")
 
     if challenge_stage == "stage_one":
         # Limites para as 5 bases normais
         x_limits_normal = (1.75, 6.25)  # x entre 0.5 e 7.5
         y_limits_normal = (0, -6)  # y entre 0.5 e 6.0
         z_limits_normal = (0.0, 1.5)  # z aleatório entre 0.0 e 1.5
+
+        # Limites para a base especial
+        x_limits_special = (0.25, 0.75)  # x entre 0.5 e 6.0
+        y_limits_special = (-1.5, -6)  # y entre 6.0 e 7.5
+        z_fixed_special = 1.52          # z fixo em 1.5
+
+        # Distância mínima entre as bases (1.0 metro para evitar colisões)
+        min_distance = 2.0
+
+        # Spawn das 5 bases normais
+        base_spawner.get_logger().info("Spawning 5 bases normais...")
+        positions_normal = base_spawner.generate_random_positions(
+            5, x_limits_normal, y_limits_normal, z_limits_normal, min_distance
+        )
+        for idx, (x, y, z) in enumerate(positions_normal):
+            model_name = f"base_normal_{idx}"
+            base_spawner.spawn(model_name, x, y, z, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/suspended_landing_platform/model.sdf")
+
+        # Spawn da base especial
+        base_spawner.get_logger().info("Spawning 1 base especial...")
+        x_special = random.uniform(x_limits_special[0], x_limits_special[1])
+        y_special = random.uniform(y_limits_special[0], y_limits_special[1])
+        z_special = z_fixed_special
+        model_name = "base_especial"
+        base_spawner.spawn(model_name, x_special, y_special, z_special, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+    
+    elif challenge_stage == "stage_two":
+        # Limites para as 3 bases aleatórias
+        x_limits_random = (1.75, 6.25)  # x entre 0.5 e 7.5
+        y_limits_random = (0, -6)  # y entre -0.5 e -7.5
+        z_limits_random = (0.0, 1.5)  # z aleatório entre 0.0 e 1.5
+
+        # Posições fixas para as 3 bases especiais
+        fixed_positions = [
+            (0.25, -2.5, 1.52),  # Base fixa 1
+            (0.25, -4.0, 1.52),  # Base fixa 2
+            (0.25, -5.5, 1.52)   # Base fixa 3
+        ]
+
+        # Distância mínima entre as bases (1.0 metro para evitar colisões em X-Y)
+        min_distance = 2.0
+
+        # Spawn das 3 bases aleatórias
+        base_spawner.get_logger().info("Spawning 3 bases aleatórias...")
+        positions_random = base_spawner.generate_random_positions(
+            3, x_limits_random, y_limits_random, z_limits_random, min_distance
+        )
+        for idx, (x, y, z) in enumerate(positions_random):
+            model_name = f"base_random_{idx}"
+            base_spawner.spawn(model_name, x, y, z, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/suspended_landing_platform/model.sdf")
+
+        # Spawn das 3 bases fixas
+        base_spawner.get_logger().info("Spawning 3 bases fixas...")
+        for idx, (x, y, z) in enumerate(fixed_positions):
+            model_name = f"base_fixa_{idx}"
+            base_spawner.spawn(model_name, x, y, z, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+
+    elif challenge_stage == "stage_three": 
+        # Limites para as 5 bases normais
+        x_limits_normal = (1.75, 6.25)  # x entre 0.5 e 7.5
+        y_limits_normal = (0, -6)  # y entre 0.5 e 6.0
+        z_limits_normal = (0.1, 0.1)  # z aleatório entre 0.0 e 1.5
 
         # Limites para a base especial
         x_limits_special = (0.25, 0.75)  # x entre 0.5 e 6.0
@@ -115,58 +167,12 @@ def main(args=None):
         x_special = random.uniform(x_limits_special[0], x_limits_special[1])
         y_special = random.uniform(y_limits_special[0], y_limits_special[1])
         z_special = z_fixed_special
-
-        # Verifica se a base especial colide com as bases normais
-        collision = False
-        for pos in positions_normal:
-            distance = ((x_special - pos[0])**2 + (y_special - pos[1])**2 + (z_special - pos[2])**2)**0.5
-            if distance < min_distance:
-                collision = True
-                break
-
-        if not collision:
-            model_name = "base_especial"
-            base_spawner.spawn(model_name, x_special, y_special, z_special, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
-        else:
-            base_spawner.get_logger().warn("Não foi possível spawnar a base especial sem colisão. Tente novamente.")
-    
-    elif challenge_stage == "stage_two":
-        # Limites para as 3 bases aleatórias
-        x_limits_random = (1.75, 6.25)  # x entre 0.5 e 7.5
-        y_limits_random = (0, -6)  # y entre -0.5 e -7.5
-        z_limits_random = (0.0, 1.5)  # z aleatório entre 0.0 e 1.5
-
-        # Posições fixas para as 3 bases especiais
-        fixed_positions = [
-            (0.25, -2.5, 1.52),  # Base fixa 1
-            (0.25, -4.0, 1.52),  # Base fixa 2
-            (0.25, -5.5, 1.52)   # Base fixa 3
-        ]
-
-        # Distância mínima entre as bases (1.0 metro para evitar colisões em X-Y)
-        min_distance = 1.0
-
-        # Spawn das 3 bases aleatórias
-        base_spawner.get_logger().info("Spawning 3 bases aleatórias...")
-        positions_random = base_spawner.generate_random_positions(
-            3, x_limits_random, y_limits_random, z_limits_random, min_distance
-        )
-        for idx, (x, y, z) in enumerate(positions_random):
-            model_name = f"base_random_{idx}"
-            base_spawner.spawn(model_name, x, y, z, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
-
-        # Spawn das 3 bases fixas
-        base_spawner.get_logger().info("Spawning 3 bases fixas...")
-        for idx, (x, y, z) in enumerate(fixed_positions):
-            model_name = f"base_fixa_{idx}"
-            base_spawner.spawn(model_name, x, y, z, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
-
-    elif challenge_stage == "stage_three": 
-      pass
+        model_name = "base_especial"
+        base_spawner.spawn(model_name, x_special, y_special, z_special, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
 
     elif challenge_stage == "stage_four":
         # Posição fixa para a base da fase 4
-        fixed_position = (3.0, -3.25, 0.0)  # Base fixa
+        fixed_position = (3.0, -3.25, 0.1)  # Base fixa
 
         # Spawn da base fixa
         base_spawner.get_logger().info("Spawning 1 base fixa...")
@@ -174,6 +180,18 @@ def main(args=None):
         base_spawner.spawn(model_name, fixed_position[0], fixed_position[1], fixed_position[2],
                            home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
         
+        #spawn qr codes
+        base_spawner.get_logger().info("Spawning QR Code A...")
+        base_spawner.spawn("qr_code_a", -0.73, -2.0, 0.75, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/qr_code_a/model.sdf")
+        base_spawner.get_logger().info("Spawning QR Code B...")
+        base_spawner.spawn("qr_code_b", 1.23, -3.5, 0.75, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/qr_code_b/model.sdf")
+        base_spawner.get_logger().info("Spawning QR Code C...")
+        base_spawner.spawn("qr_code_c", 0.75, -4.01, 0.75, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/qr_code_c/model.sdf")
+        base_spawner.get_logger().info("Spawning QR Code D...")
+        base_spawner.spawn("qr_code_d", 0.75, -5.98, 0.75, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/qr_code_d/model.sdf")
+        base_spawner.get_logger().info("Spawning QR Code E...")
+        base_spawner.spawn("qr_code_e", 0.25, -6.98, 0.75, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/qr_code_e/model.sdf")
+
     rclpy.spin(base_spawner)
     base_spawner.destroy_node()
     rclpy.shutdown()
