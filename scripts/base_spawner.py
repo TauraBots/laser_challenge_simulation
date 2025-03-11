@@ -137,7 +137,9 @@ def main(args=None):
         base_spawner.get_logger().info("Spawning 3 bases fixas...")
         for idx, (x, y, z) in enumerate(fixed_positions):
             model_name = f"base_fixa_{idx}"
+            box_name = f"box_{idx}"
             base_spawner.spawn(model_name, x, y, z, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/landing_platform/model.sdf")
+            base_spawner.spawn(box_name, x, y, z+0.3, home_dir + "/laser_uav_system_ws/src/laser_challenge_simulation/models/box/model.sdf")
 
     elif challenge_stage == "stage_three": 
         # Limites para as 5 bases normais
