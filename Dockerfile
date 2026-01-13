@@ -4,6 +4,9 @@ FROM dustynv/ros:humble-desktop-l4t-r32.7.1
 # Evita interações durante a instalação de pacotes
 ENV DEBIAN_FRONTEND=noninteractive
 
+# Configura o caminho dos modelos para o Gazebo encontrar as peças do desafio
+ENV GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/ros2_ws/install/laser_challenge_simulation/share/laser_challenge_simulation/models
+
 # Atualiza e instala dependências de sistema e ferramentas de build do ROS 2
 RUN apt-get update && apt-get install -y \
     python3-pip \
