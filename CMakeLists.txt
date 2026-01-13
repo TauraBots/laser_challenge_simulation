@@ -1,21 +1,27 @@
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 3.8)
 project(laser_challenge_simulation)
 
-find_package(catkin REQUIRED COMPONENTS
-  rospy
-  gazebo_ros
-  gazebo_msgs
-  mrs_gazebo_common_resources
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+find_package(ament_cmake REQUIRED)
+find_package(rclpy REQUIRED)
+find_package(gazebo_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+
+# Instala os scripts Python
+install(PROGRAMS
+  scripts/base_spawner.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
-catkin_package(
-  CATKIN_DEPENDS rospy gazebo_ros
+# Instala as pastas de modelos e mundos para que fiquem acessíveis no install/
+install(DIRECTORY
+  models
+  worlds
+  launch
+  DESTINATION share/${PROJECT_NAME}
 )
 
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-)
-
-catkin_install_python(PROGRAMS scripts/base_spawner.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+ament_package()

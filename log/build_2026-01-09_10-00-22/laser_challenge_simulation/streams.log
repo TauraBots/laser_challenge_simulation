@@ -1,0 +1,36 @@
+[0.013s] Invoking command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angelistao/laser_challenge_simulation -DCMAKE_INSTALL_PREFIX=/home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation
+[0.260s] -- The C compiler identification is GNU 11.4.0
+[0.560s] -- The CXX compiler identification is GNU 11.4.0
+[0.574s] -- Detecting C compiler ABI info
+[0.663s] -- Detecting C compiler ABI info - done
+[0.675s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.676s] -- Detecting C compile features
+[0.677s] -- Detecting C compile features - done
+[0.682s] -- Detecting CXX compiler ABI info
+[0.790s] -- Detecting CXX compiler ABI info - done
+[0.798s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.798s] -- Detecting CXX compile features
+[0.799s] -- Detecting CXX compile features - done
+[0.806s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.970s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.081s] -- Found rclpy: 3.3.19 (/opt/ros/humble/share/rclpy/cmake)
+[1.094s] [31mCMake Error at CMakeLists.txt:10 (find_package):
+[1.094s]   By not providing "Findgazebo_msgs.cmake" in CMAKE_MODULE_PATH this project
+[1.095s]   has asked CMake to find a package configuration file provided by
+[1.095s]   "gazebo_msgs", but CMake did not find one.
+[1.095s] 
+[1.095s]   Could not find a package configuration file provided by "gazebo_msgs" with
+[1.095s]   any of the following names:
+[1.095s] 
+[1.095s]     gazebo_msgsConfig.cmake
+[1.095s]     gazebo_msgs-config.cmake
+[1.095s] 
+[1.095s]   Add the installation prefix of "gazebo_msgs" to CMAKE_PREFIX_PATH or set
+[1.095s]   "gazebo_msgs_DIR" to a directory containing one of the above files.  If
+[1.095s]   "gazebo_msgs" provides a separate development package or SDK, be sure it
+[1.095s]   has been installed.
+[1.095s] 
+[1.095s] [0m
+[1.095s] -- Configuring incomplete, errors occurred!
+[1.095s] See also "/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation/CMakeFiles/CMakeOutput.log".
+[1.099s] Invoked command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angelistao/laser_challenge_simulation -DCMAKE_INSTALL_PREFIX=/home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation
