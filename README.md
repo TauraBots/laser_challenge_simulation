@@ -20,3 +20,8 @@ This package contains the Gazebo files (models and worlds) related to the LASER 
 - Stage Three
 - Stage Four
 - Test
+
+## For the execution
+```bash
+ros2 launch laser_challenge_simulation challenge.launch.py stage:=stage_{task you want}
+```
