@@ -1,300 +1,63 @@
 <?xml version="1.0" ?>
-<?xml-model href="http://sdformat.org/schemas/root.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
-<sdf version="1.5">
+<sdf version="1.9">
   <world name="default">
-    <!-- <plugin name="mrs_gazebo_link_attacher_plugin" filename="libMRSGazeboLinkAttacherPlugin.so"/> -->
-    <plugin name="mrs_gazebo_static_transform_republisher_plugin" filename="libMrsGazeboCommonResources_StaticTransformRepublisher.so"/>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
 
-    <!-- coordinate system {-->
-    <spherical_coordinates>
-      <surface_model>EARTH_WGS84</surface_model>
-      <latitude_deg>47.397743</latitude_deg>
-      <longitude_deg>8.545594</longitude_deg>
-      <elevation>0.0</elevation>
-      <heading_deg>0</heading_deg>
-    </spherical_coordinates>
-    <!--}-->
-    
-    <!-- physics engine {-->
-    <physics name="default_physics" default="0" type="ode">
-      <gravity>0 0 -9.8066</gravity>
-      <ode>
-        <solver>
-          <type>quick</type>
-          <iters>50</iters>
-          <sor>1.0</sor>
-          <use_dynamic_moi_rescaling>0</use_dynamic_moi_rescaling>
-        </solver>
-        <constraints>
-          <cfm>0</cfm>
-          <erp>0.2</erp>
-          <contact_max_correcting_vel>1000</contact_max_correcting_vel>
-          <contact_surface_layer>0.001</contact_surface_layer>
-        </constraints>
-      </ode>
-      <max_step_size>0.004</max_step_size>
-      <real_time_factor>1</real_time_factor>
-      <real_time_update_rate>250</real_time_update_rate>
-      <magnetic_field>6.0e-06 2.3e-05 -4.2e-05</magnetic_field>
-    </physics>
-    <!--}-->
+    <gui fullscreen="0">
+      <camera name="user_camera">
+        <pose>15 2 10 0 0.6 -2.64</pose>
+      </camera>
+    </gui>
 
-    <!-- setup shadows {-->
-    <scene>
-      <shadows>false</shadows>
-      <!-- <sky> -->
-      <!--   <clouds/> -->
-      <!-- </sky> -->
-    </scene>
-    <!--}-->
-
-    <!-- sun {-->
     <light type="directional" name="sun">
       <cast_shadows>true</cast_shadows>
       <pose>250 250 600 0 0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
       <specular>0.2 0.2 0.2 1</specular>
-      <attenuation>
-        <range>1000</range>
-        <constant>0.9</constant>
-        <linear>0.01</linear>
-        <quadratic>0.001</quadratic>
-      </attenuation>
       <direction>0 0 -1</direction>
-    </light>    
-    <!--}-->
+    </light>
 
-    <!-- ground plane {-->
     <model name="ground_plane">
       <static>true</static>
       <link name="link">
         <collision name="collision">
-          <pose>0 0 0 0 0 0</pose>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>250 250</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1</mu>
-                <mu2>1</mu2>
-              </ode>
-            </friction>
-          </surface>
+          <geometry><plane><normal>0 0 1</normal><size>250 250</size></plane></geometry>
         </collision>
-        <visual name="grass">
-          <pose>0 0 0 0 0 0</pose>
-          <cast_shadows>false</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>150 250</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/Gazebo.material</uri>
-              <name>Gazebo/Grass</name>
-            </script>
-          </material>
-        </visual> 
+        <visual name="visual">
+          <geometry><plane><normal>0 0 1</normal><size>250 250</size></plane></geometry>
+          <material><ambient>0.3 0.5 0.3 1</ambient><diffuse>0.3 0.5 0.3 1</diffuse></material>
+        </visual>
       </link>
     </model>
 
-    <!-- GUI frame synchronization {-->
-    <plugin name="mrs_gazebo_rviz_cam_synchronizer" filename="libMrsGazeboCommonResources_RvizCameraSynchronizer.so" >
-      <target_frame_id>gazebo_user_camera</target_frame_id>
-      <world_origin_frame_id>uav1/gps_origin</world_origin_frame_id>
-      <frame_to_follow>uav1::base_link</frame_to_follow>
-    </plugin>
-    <!--}-->
+    <include><name>arena</name><uri>model://arena_spawn</uri><pose>-0.75 -7.0 0.001 0 0 0</pose></include>
+    <include><name>takeoff_platform</name><uri>model://takeoff_platform</uri><pose>0 0 0 0 0 0</pose></include>
+    <include><name>banner</name><uri>model://banner</uri><pose>-0.75 -6.9 0 0 0 0</pose></include>
+    <include><name>banner_2</name><uri>model://banner_2</uri><pose>-0.65 1.0 0 0 0 -1.57</pose></include>
+    <include><name>landing_platform_A</name><uri>model://suspended_landing_platform</uri><pose>2.75 0.0 1.0 0 0 0</pose></include>
+    <include><name>landing_platform_E</name><uri>model://suspended_landing_platform</uri><pose>0.0 -6.0 1.5 0 0 0</pose></include>
+    <include><name>barcodeshelf</name><uri>model://barcode_shelf</uri><pose>5.0 -6.45 0.0 0.0 0.0 1.57</pose></include>
 
-    <!-- user camera {-->
-    <gui>
-      <camera name="camera">
-        <pose>15 2 10 0 0.6 -2.64</pose>
-      </camera>
-    </gui>
-    <!--}-->
-
-    <!-- Models Worlds -->
-
-    <!-- THE ARENA MODEL -->
-    <model name="arena">
-      <include>
-        <uri>model://arena_spawn</uri>
-        <!-- Pose ( x y z r p y ) -->
-        <pose>-0.75 -7.0 0.001 0 -0 0</pose>
-      </include>
-    </model>
-
-    <!-- THE TAKEOFF PLATFORM MODEL -->
-    <model name="takeoff_platform">
-      <include>
-        <uri>model://takeoff_platform</uri>
-        <pose>0.0 0.0 0.0 0.0 -0.0 0.0</pose>
-      </include>
-    </model>
-
-    <!-- THE BANNER MODEL -->
-    <model name="banner">
-      <include>
-        <uri>model://banner</uri>
-        <pose>-0.75 -6.9 0.0 0.0 0.0 0.0</pose>
-      </include>
-    </model>
-
-    <model name="banner_2">
-      <include>
-        <uri>model://banner_2</uri>
-        <pose>-0.65 1.0 0.0 0.0 0.0 -1.57</pose>
-      </include>
-    </model>
-    
-    <!-- THE SUSPENDED LANDING PLATFORM MODEL -->
-    <model name="landing_platform_A">
-      <include>
-        <uri>model://suspended_landing_platform</uri>
-        <pose>2.75 0.0 1.0 0 -0 0</pose>
-        <!-- <pose>8.0 8.0 0.755 0 -0 0</pose> -->
-      </include>
-    </model>
-
-    <model name="landing_platform_E">
-      <include>
-        <uri>model://suspended_landing_platform</uri>
-        <pose>0.0 -6.0 1.50 0 -0 0</pose>
-      </include>
-    </model>
-
-    <!-- THE BARCODE SHELF -->
-    <model name="barcodeshelf">
-      <include>
-        <uri>model://barcode_shelf</uri>
-        <!-- Pose ( x y z r p y ) -->
-        <pose frame=''>5.0 -6.45 0.0 0.0 -0.0 1.57</pose>
-      </include>
-    </model>
-    
-    <!-- X - 2.05 - 4.95  -->
-    <!-- Y -6.375  -->
-    <!-- X - 1.05 - 1.55 - 2.05 -2.55  -->
-
-    <model name="box_A0">
-      <include>
-        <uri>model://box_A0</uri>
-        <pose>4.0 -6.375 2.55 0 0 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_A1">
-      <include>
-        <uri>model://box_A1</uri>
-        <pose>4.5 -6.375 2.55 0 1.57 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_A2">
-      <include>
-        <uri>model://box_A2</uri>
-        <pose>3.0 -6.375 2.55 0 0 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_A3">
-      <include>
-        <uri>model://box_A3</uri>
-        <pose>3.5 -6.375 2.55 0 1.57 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_B0">
-      <include>
-        <uri>model://box_B0</uri>
-        <pose>3.5 -6.375 2.05 0 1.57 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_B1">
-      <include>
-        <uri>model://box_B1</uri>
-        <pose>4.0 -6.375 2.05 0 1.57 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_B2">
-      <include>
-        <uri>model://box_B2</uri>
-        <pose>3.0 -6.375 2.05 0 0 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_B3">
-      <include>
-        <uri>model://box_B3</uri>
-        <pose>4.5 -6.375 2.05 0 0 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_C0">
-      <include>
-        <uri>model://box_C0</uri>
-        <pose>3.5 -6.375 1.55 0 1.57 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_C1">
-      <include>
-        <uri>model://box_C1</uri>
-        <pose>2.0 -6.375 1.55 0 1.57 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_C2">
-      <include>
-        <uri>model://box_C2</uri>
-        <pose>3.0 -6.375 1.55 0 0 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_C3">
-      <include>
-        <uri>model://box_C3</uri>
-        <pose>4.0 -6.375 1.55 0 0 -0 </pose>
-      </include>
-    </model>    
-
-    <model name="box_D0">
-      <include>
-        <uri>model://box_D0</uri>
-        <pose>3.0 -6.375 1.05 0 1.57 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_D1">
-      <include>
-        <uri>model://box_D1</uri>
-        <pose>4.0 -6.375 1.05 0 1.57 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_D2">
-      <include>
-        <uri>model://box_D2</uri>
-        <pose>2.5 -6.375 1.05 0 0 -0 </pose>
-      </include>
-    </model>
-
-    <model name="box_D3">
-      <include>
-        <uri>model://box_D3</uri>
-        <pose>3.5 -6.375 1.05 0 0 -0 </pose>
-      </include>
-    </model>    
-        
-
+    <include><name>box_A0</name><uri>model://box_A0</uri><pose>4.0 -6.375 2.55 0 0 0</pose></include>
+    <include><name>box_A1</name><uri>model://box_A1</uri><pose>4.5 -6.375 2.55 0 1.57 0</pose></include>
+    <include><name>box_A2</name><uri>model://box_A2</uri><pose>3.0 -6.375 2.55 0 0 0</pose></include>
+    <include><name>box_A3</name><uri>model://box_A3</uri><pose>3.5 -6.375 2.55 0 1.57 0</pose></include>
+    <include><name>box_B0</name><uri>model://box_B0</uri><pose>3.5 -6.375 2.05 0 1.57 0</pose></include>
+    <include><name>box_B1</name><uri>model://box_B1</uri><pose>4.0 -6.375 2.05 0 1.57 0</pose></include>
+    <include><name>box_B2</name><uri>model://box_B2</uri><pose>3.0 -6.375 2.05 0 0 0</pose></include>
+    <include><name>box_B3</name><uri>model://box_B3</uri><pose>4.5 -6.375 2.05 0 0 0</pose></include>
+    <include><name>box_C0</name><uri>model://box_C0</uri><pose>3.5 -6.375 1.55 0 1.57 0</pose></include>
+    <include><name>box_C1</name><uri>model://box_C1</uri><pose>2.0 -6.375 1.55 0 1.57 0</pose></include>
+    <include><name>box_C2</name><uri>model://box_C2</uri><pose>3.0 -6.375 1.55 0 0 0</pose></include>
+    <include><name>box_C3</name><uri>model://box_C3</uri><pose>4.0 -6.375 1.55 0 0 0</pose></include>
+    <include><name>box_D0</name><uri>model://box_D0</uri><pose>3.0 -6.375 1.05 0 1.57 0</pose></include>
+    <include><name>box_D1</name><uri>model://box_D1</uri><pose>4.0 -6.375 1.05 0 1.57 0</pose></include>
+    <include><name>box_D2</name><uri>model://box_D2</uri><pose>2.5 -6.375 1.05 0 0 0</pose></include>
+    <include><name>box_D3</name><uri>model://box_D3</uri><pose>3.5 -6.375 1.05 0 0 0</pose></include>
   </world>
 </sdf>
