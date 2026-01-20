@@ -9,7 +9,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
     # 1. Definição de caminhos do pacote
     pkg_laser = get_package_share_directory('laser_challenge_simulation')
-    pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
+    pkg_gazebo_ros = get_package_share_directory('ros_gz_sim')
 
     # 2. Argumento para escolher o estágio (Default: stage_one)
     stage_arg = DeclareLaunchArgument(
@@ -28,14 +28,14 @@ def generate_launch_description():
     # Isto substitui o "export GAZEBO_MODEL_PATH" manual no terminal
     models_path = os.path.join(pkg_laser, 'models')
     set_model_path = SetEnvironmentVariable(
-        name='GAZEBO_MODEL_PATH',
-        value=[os.environ.get('GAZEBO_MODEL_PATH', ''), ':', models_path]
+        name='GZ_SIM_RESOURCE_PATH',
+        value=[os.environ.get('GZ_SIM_RESOURCE_PATH', ''), ':', models_path]
     )
 
     # 4. Lançamento do Gazebo com o mundo selecionado
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(pkg_gazebo_ros, 'launch', 'gazebo.launch.py')
+            os.path.join(pkg_gazebo_ros, 'launch', 'gz_sim.launch.py.')
         ),
         launch_arguments={'world': world_file}.items()
     )

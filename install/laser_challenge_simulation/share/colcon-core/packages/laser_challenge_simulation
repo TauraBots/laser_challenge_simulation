@@ -1,1 +1,1 @@
-ament_index_python:gazebo_msgs:geometry_msgs:rclpy
+ament_index_python:geometry_msgs:rclpy:ros_gz_bridge:ros_gz_interfaces:ros_gz_sim

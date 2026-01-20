@@ -7,8 +7,9 @@ endif()
 
 find_package(ament_cmake REQUIRED)
 find_package(rclpy REQUIRED)
-find_package(gazebo_msgs REQUIRED)
+find_package(ros_gz_interfaces REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(ros_gz_sim REQUIRED)
 
 # Instala os scripts Python
 install(PROGRAMS
