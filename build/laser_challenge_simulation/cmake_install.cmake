@@ -43,14 +43,18 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/laser_challenge_simulation" TYPE PROGRAM FILES "/home/angelistao/laser_challenge_simulation/scripts/base_spawner.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/laser_challenge_simulation" TYPE DIRECTORY FILES
+    "/home/angelistao/laser_challenge_simulation/launch"
+    "/home/angelistao/laser_challenge_simulation/models"
+    "/home/angelistao/laser_challenge_simulation/worlds"
+    "/home/angelistao/laser_challenge_simulation/scripts"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/laser_challenge_simulation" TYPE DIRECTORY FILES
-    "/home/angelistao/laser_challenge_simulation/models"
-    "/home/angelistao/laser_challenge_simulation/worlds"
-    "/home/angelistao/laser_challenge_simulation/launch"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/laser_challenge_simulation" TYPE PROGRAM FILES
+    "/home/angelistao/laser_challenge_simulation/scripts/base_spawner.py"
+    "/home/angelistao/laser_challenge_simulation/scripts/automated_takeoff.py"
     )
 endif()
 

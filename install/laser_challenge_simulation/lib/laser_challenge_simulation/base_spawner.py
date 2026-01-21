@@ -2,12 +2,13 @@
 import random
 import rclpy
 from rclpy.node import Node
-from gazebo_msgs.srv import SpawnEntity
-from geometry_msgs.msg import Pose, Point, Quaternion
+# Mudança para ros_gz_interfaces no Harmonic
+from ros_gz_interfaces.srv import SpawnEntity
+from geometry_msgs.msg import Pose
 from ament_index_python.packages import get_package_share_directory
 import os
 
-# Lista das posições pré-definidas (mantida do original)
+# Lista das posições (mantida do seu código original)
 bases_positions = [
     (6.5, -0.5, 0.05), (6.5, -1.5, 0.05), (6.5, -2.5, 0.05), (6.5, -3.5, 0.05), (6.5, -4.5, 0.05), (6.5, -5.5, 0.05),
     (5.5, 0.5, 0.05), (5.5, -0.5, 0.05), (5.5, -1.5, 0.05), (5.5, -2.5, 0.05), (5.5, -3.5, 0.05), (5.5, -4.5, 0.05), (5.5, -5.5, 0.05),
@@ -22,67 +23,59 @@ bases_positions = [
 class BaseSpawner(Node):
     def __init__(self):
         super().__init__('base_spawner')
-        self.client = self.create_client(SpawnEntity, '/spawn_entity')
         
+
+        self.client = self.create_client(SpawnEntity, '/world/default/create')      
+
         while not self.client.wait_for_service(timeout_sec=1.0):
-            self.get_logger().info('Serviço /spawn_entity não disponível, a aguardar...')
+            self.get_logger().info('Serviço /spawn_entity (GZ Sim) não disponível, a aguardar...')
 
-        # Declaração de parâmetros (equivalente a rospy.get_param)
         self.declare_parameter('challenge_stage', 'stage_one')
-        self.declare_parameter('bases_spawn', '')
-
         self.challenge_stage = self.get_parameter('challenge_stage').get_parameter_value().string_value
-        bases_spawn_str = self.get_parameter('bases_spawn').get_parameter_value().string_value
 
-        # Parsing da lista de bases
-        self.bases_spawn_param = []
-        if bases_spawn_str:
-            clean_str = bases_spawn_str.strip('[]')
-            self.bases_spawn_param = [int(idx.strip()) for idx in clean_str.split(",") if idx.strip()]
-
-        # Lógica de execução baseada no estágio
         self.run_spawner()
 
     def spawn(self, model_name, x, y, z, model_path):
-        self.get_logger().info(f"A preparar spawn do modelo: {model_name} em ({x}, {y}, {z})")
-        
         if not os.path.exists(model_path):
-            self.get_logger().error(f"Ficheiro do modelo não encontrado: {model_path}")
+            self.get_logger().error(f"Ficheiro não encontrado: {model_path}")
             return
 
         with open(model_path, "r") as f:
             model_xml = f.read()
 
         request = SpawnEntity.Request()
-        request.name = model_name
-        request.xml = model_xml
-        request.initial_pose.position.x = float(x)
-        request.initial_pose.position.y = float(y)
-        request.initial_pose.position.z = float(z)
+        request.entity_factory.name = model_name
+        request.entity_factory.sdf = model_xml
+        request.entity_factory.pose.position.x = float(x)
+        request.entity_factory.pose.position.y = float(y)
+        request.entity_factory.pose.position.z = float(z)
         
-        future = self.client.call_async(request)
-        # Em scripts simples, podemos esperar pela resposta de forma síncrona se necessário
-        # rclpy.spin_until_future_complete(self, future)
+        self.client.call_async(request)
+        self.get_logger().info(f"Spawn enviado: {model_name} em ({x}, {y}, {z})")
 
     def run_spawner(self):
-        # Obter o caminho base do pacote de forma dinâmica (evita caminhos fixos /home/wagner/...)
         try:
             pkg_path = get_package_share_directory('laser_challenge_simulation')
         except Exception:
-            self.get_logger().error("Pacote laser_challenge_simulation não encontrado no index do ROS 2.")
+            self.get_logger().error("Pacote não encontrado.")
             return
 
+        # 1. Spawn do Drone Iris (O "Pulo do Gato" para a integração)
+        iris_path = os.path.join(pkg_path, "models", "iris", "model.sdf")
+
+        self.spawn("iris", 0.0, 0.0, 1.0, iris_path)
+
+
+        # 2. Lógica de Estágios (Mantida do original)
+        indices = random.sample(range(1, 38), 3)
+        
         if self.challenge_stage == "stage_one":
-            if not self.bases_spawn_param:
-                self.bases_spawn_param = random.sample(range(1, 38), 3)
-            self.spawn_bases(self.bases_spawn_param, pkg_path)
+            self.spawn_bases(indices, pkg_path)
             
         elif self.challenge_stage == "stage_three":
-            if not self.bases_spawn_param:
-                self.bases_spawn_param = random.sample(range(1, 38), 3)
-            self.spawn_bases(self.bases_spawn_param, pkg_path)
-            self.bases_spawn_param.extend([39, 40])
-            self.spawn_qr_boxes(self.bases_spawn_param, pkg_path)
+            self.spawn_bases(indices, pkg_path)
+            indices.extend([39, 40])
+            self.spawn_qr_boxes(indices, pkg_path)
 
     def spawn_bases(self, indices, pkg_path):
         model_path = os.path.join(pkg_path, "models", "landing_platform", "model.sdf")
@@ -103,8 +96,7 @@ class BaseSpawner(Node):
 def main(args=None):
     rclpy.init(args=args)
     node = BaseSpawner()
-    # Como o spawn é assíncrono, giramos um pouco para garantir que os pedidos saem
-    rclpy.spin_once(node, timeout_sec=2.0)
+    rclpy.spin_once(node, timeout_sec=5.0)
     node.destroy_node()
     rclpy.shutdown()
 
