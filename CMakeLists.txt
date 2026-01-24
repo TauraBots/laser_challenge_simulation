@@ -16,7 +16,7 @@ install(DIRECTORY
 
 install(PROGRAMS
   scripts/base_spawner.py
-  scripts/automated_takeoff.py  
+  scripts/takeoff_sdk.py  
   DESTINATION lib/${PROJECT_NAME}
 )
 

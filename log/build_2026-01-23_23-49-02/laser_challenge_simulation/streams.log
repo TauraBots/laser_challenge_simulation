@@ -1,0 +1,295 @@
+[0.011s] Invoking command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angelistao/laser_challenge_simulation -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation
+[0.376s] -- The C compiler identification is GNU 11.4.0
+[0.586s] -- The CXX compiler identification is GNU 11.4.0
+[0.600s] -- Detecting C compiler ABI info
+[0.692s] -- Detecting C compiler ABI info - done
+[0.700s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.701s] -- Detecting C compile features
+[0.702s] -- Detecting C compile features - done
+[0.707s] -- Detecting CXX compiler ABI info
+[0.800s] -- Detecting CXX compiler ABI info - done
+[0.816s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.816s] -- Detecting CXX compile features
+[0.817s] -- Detecting CXX compile features - done
+[0.832s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.333s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.422s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.462s] -- Found rclpy: 3.3.19 (/opt/ros/humble/share/rclpy/cmake)
+[1.557s] -- Configuring done
+[1.560s] -- Generating done
+[1.561s] -- Build files have been written to: /home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation
+[1.566s] Invoked command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angelistao/laser_challenge_simulation -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation
+[1.569s] Invoking command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation -- -j8 -l8
+[1.609s] Invoked command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation -- -j8 -l8
+[1.622s] Invoking command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation
+[1.629s] -- Install configuration: ""
+[1.629s] -- Execute custom install script
+[1.630s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/launch/challenge.launch.py
+[1.640s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/launch/challenge_world.launch
+[1.649s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/launch/challenge_world_.launch
+[1.659s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/launch/height_estimator_test.launch
+[1.668s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/launch/vision_world.launch
+[1.679s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/Arena.mtl
+[1.689s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/Arena.obj
+[1.699s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/Arena_cost.mtl
+[1.708s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/Arena_cost.obj
+[1.717s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/Arena_old.mtl
+[1.726s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/Arena_old.obj
+[1.737s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/banner.jpeg
+[1.746s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/high_base_left.mtl
+[1.762s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/high_base_left.obj
+[1.773s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/high_base_right.mtl
+[1.783s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/high_base_right.obj
+[1.793s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/net.mtl
+[1.803s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/net.obj
+[1.811s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/pilar.mtl
+[1.820s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes/pilar.obj
+[1.828s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/model.config
+[1.837s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/model.sdf
+[1.845s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner/meshes/banner.mtl
+[1.853s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner/meshes/banner.obj
+[1.861s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner/meshes/materials/banner.jpeg
+[1.870s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner/meshes/materials/banner_1.jpeg
+[1.878s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner/meshes/materials/banner_3.jpeg
+[1.886s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner/model.config
+[1.895s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner/model.sdf
+[1.906s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner_2/meshes/banner.mtl
+[1.914s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner_2/meshes/banner.obj
+[1.923s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner_2/meshes/materials/banner.jpeg
+[1.931s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner_2/meshes/materials/banner_1.jpeg
+[1.940s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner_2/meshes/materials/banner_2.jpeg
+[1.949s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner_2/model.config
+[1.957s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner_2/model.sdf
+[1.965s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/barcode_shelf.mtl
+[1.974s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/barcode_shelf.obj
+[1.982s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-01.png
+[1.990s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-02.png
+[1.998s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-03.png
+[2.007s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-04.png
+[2.015s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-05.png
+[2.024s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-06.png
+[2.032s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-07.png
+[2.041s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-08.png
+[2.048s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-09.png
+[2.057s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-10.png
+[2.064s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-11.png
+[2.073s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-12.png
+[2.081s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-13.png
+[2.090s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-14.png
+[2.098s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-15.png
+[2.107s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-16.png
+[2.115s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-17.png
+[2.124s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-18.png
+[2.132s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-19.png
+[2.141s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material/layout-20.png
+[2.148s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/shelf.mtl
+[2.157s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/shelf.obj
+[2.164s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/model.config
+[2.173s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/model.sdf
+[2.181s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A0/meshes/codebar_box.mtl
+[2.190s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A0/meshes/codebar_box.obj
+[2.199s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A0/meshes/materials/layout-01.png
+[2.207s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A0/model.config
+[2.215s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A0/model.sdf
+[2.223s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A1/meshes/codebar_box.mtl
+[2.231s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A1/meshes/codebar_box.obj
+[2.241s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A1/meshes/materials/layout-02.png
+[2.248s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A1/model.config
+[2.257s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A1/model.sdf
+[2.264s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A2/meshes/codebar_box.mtl
+[2.273s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A2/meshes/codebar_box.obj
+[2.281s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A2/meshes/materials/layout-03.png
+[2.290s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A2/model.config
+[2.298s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A2/model.sdf
+[2.306s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A3/meshes/codebar_box.mtl
+[2.314s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A3/meshes/codebar_box.obj
+[2.323s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A3/meshes/materials/layout-04.png
+[2.331s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A3/model.config
+[2.341s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A3/model.sdf
+[2.349s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B0/meshes/codebar_box.mtl
+[2.357s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B0/meshes/codebar_box.obj
+[2.366s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B0/meshes/materials/layout-05.png
+[2.374s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B0/model.config
+[2.382s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B0/model.sdf
+[2.391s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B1/meshes/codebar_box.mtl
+[2.399s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B1/meshes/codebar_box.obj
+[2.408s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B1/meshes/materials/layout-06.png
+[2.415s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B1/model.config
+[2.424s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B1/model.sdf
+[2.432s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B2/meshes/codebar_box.mtl
+[2.442s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B2/meshes/codebar_box.obj
+[2.450s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B2/meshes/materials/layout-07.png
+[2.459s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B2/model.config
+[2.466s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B2/model.sdf
+[2.475s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B3/meshes/codebar_box.mtl
+[2.483s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B3/meshes/codebar_box.obj
+[2.492s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B3/meshes/materials/layout-08.png
+[2.499s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B3/model.config
+[2.508s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B3/model.sdf
+[2.516s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C0/meshes/codebar_box.mtl
+[2.524s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C0/meshes/codebar_box.obj
+[2.533s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C0/meshes/materials/layout-09.png
+[2.542s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C0/model.config
+[2.550s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C0/model.sdf
+[2.558s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C1/meshes/codebar_box.mtl
+[2.566s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C1/meshes/codebar_box.obj
+[2.575s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C1/meshes/materials/layout-10.png
+[2.582s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C1/model.config
+[2.591s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C1/model.sdf
+[2.650s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C2/meshes/codebar_box.mtl
+[2.662s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C2/meshes/codebar_box.obj
+[2.673s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C2/meshes/materials/layout-11.png
+[2.685s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C2/model.config
+[2.697s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C2/model.sdf
+[2.710s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C3/meshes/codebar_box.mtl
+[2.723s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C3/meshes/codebar_box.obj
+[2.731s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C3/meshes/materials/layout-12.png
+[2.741s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C3/model.config
+[2.749s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C3/model.sdf
+[2.757s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D0/meshes/codebar_box.mtl
+[2.765s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D0/meshes/codebar_box.obj
+[2.774s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D0/meshes/materials/layout-13.png
+[2.782s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D0/model.config
+[2.790s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D0/model.sdf
+[2.798s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D1/meshes/codebar_box.mtl
+[2.807s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D1/meshes/codebar_box.obj
+[2.814s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D1/meshes/materials/layout-14.png
+[2.823s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D1/model.config
+[2.831s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D1/model.sdf
+[2.841s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D2/meshes/codebar_box.mtl
+[2.849s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D2/meshes/codebar_box.obj
+[2.857s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D2/meshes/materials/layout-15.png
+[2.865s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D2/model.config
+[2.873s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D2/model.sdf
+[2.881s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D3/meshes/codebar_box.mtl
+[2.890s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D3/meshes/codebar_box.obj
+[2.898s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D3/meshes/materials/layout-16.png
+[2.907s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D3/model.config
+[2.914s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D3/model.sdf
+[2.923s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/grass_plane/meshes/grass_plane.mtl
+[2.931s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/grass_plane/meshes/grass_plane.obj
+[2.940s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/grass_plane/meshes/materials/texture.jpeg
+[2.948s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/grass_plane/model.config
+[2.956s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/grass_plane/model.sdf
+[2.964s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/iris/meshes/iris.dae
+[2.972s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/iris/meshes/iris_prop_ccw.dae
+[2.981s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/iris/meshes/iris_prop_cw.dae
+[2.989s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/iris/model.config
+[2.997s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/iris/model.sdf
+[3.006s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/landing_platform/meshes/landing_platform.mtl
+[3.013s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/landing_platform/meshes/landing_platform.obj
+[3.022s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/landing_platform/model.config
+[3.030s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/landing_platform/model.sdf
+[3.039s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/landing_platform_movel/meshes/landing_platform.mtl
+[3.047s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/landing_platform_movel/meshes/landing_platform.obj
+[3.056s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/landing_platform_movel/model.config
+[3.064s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/landing_platform_movel/model.sdf
+[3.073s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_left/meshes/materials/A_Prancheta_1.png
+[3.081s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_left/meshes/materials/gas measure.eps
+[3.090s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_left/meshes/materials/warp.png
+[3.098s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_left/meshes/measure_gas_high_base_left.mtl
+[3.107s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_left/meshes/measure_gas_high_base_left.obj
+[3.115s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_left/model.config
+[3.124s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_left/model.sdf
+[3.133s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_right/meshes/materials/C_Prancheta_1.png
+[3.141s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_right/meshes/materials/gas measure.eps
+[3.150s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_right/meshes/materials/warp.png
+[3.158s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_right/meshes/measure_gas_high_base_right.mtl
+[3.165s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_right/meshes/measure_gas_high_base_right.obj
+[3.174s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_right/model.config
+[3.182s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_right/model.sdf
+[3.190s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_land_base/meshes/materials/B_Prancheta_1.png
+[3.199s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_land_base/meshes/materials/D_Prancheta_1.png
+[3.207s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_land_base/meshes/materials/gas measure.ai
+[3.216s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_land_base/meshes/materials/gas measure.eps
+[3.224s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_land_base/meshes/materials/warp.png
+[3.233s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_land_base/meshes/measure_gas_land_base.mtl
+[3.243s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_land_base/meshes/measure_gas_land_base.obj
+[3.252s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_land_base/model.config
+[3.261s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_land_base/model.sdf
+[3.270s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/pipe/meshes/pipe.mtl
+[3.279s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/pipe/meshes/pipe.obj
+[3.290s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/pipe/model.config
+[3.300s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/pipe/model.sdf
+[3.313s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_a/meshes/materials/A.ai
+[3.325s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_a/meshes/materials/A.png
+[3.337s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_a/meshes/materials/warp.png
+[3.349s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_a/meshes/qrcode_box_a.mtl
+[3.362s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_a/meshes/qrcode_box_a.obj
+[3.374s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_a/model.config
+[3.384s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_a/model.sdf
+[3.397s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_b/meshes/materials/B.ai
+[3.409s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_b/meshes/materials/B.png
+[3.419s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_b/meshes/materials/warp.png
+[3.430s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_b/meshes/qrcode_box_b.mtl
+[3.442s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_b/meshes/qrcode_box_b.obj
+[3.452s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_b/model.config
+[3.463s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_b/model.sdf
+[3.475s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_c/meshes/materials/C.ai
+[3.484s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_c/meshes/materials/C.png
+[3.495s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_c/meshes/materials/warp.png
+[3.506s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_c/meshes/qrcode_box_c.mtl
+[3.515s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_c/meshes/qrcode_box_c.obj
+[3.527s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_c/model.config
+[3.539s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_c/model.sdf
+[3.549s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_d/meshes/materials/D.ai
+[3.562s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_d/meshes/materials/D.png
+[3.573s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_d/meshes/materials/warp.png
+[3.582s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_d/meshes/qrcode_box_d.mtl
+[3.594s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_d/meshes/qrcode_box_d.obj
+[3.604s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_d/model.config
+[3.614s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_d/model.sdf
+[3.625s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_e/meshes/materials/E.ai
+[3.634s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_e/meshes/materials/E.png
+[3.646s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_e/meshes/materials/warp.png
+[3.658s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_e/meshes/qrcode_box_e.mtl
+[3.666s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_e/meshes/qrcode_box_e.obj
+[3.678s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_e/model.config
+[3.688s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_e/model.sdf
+[3.699s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/sensor_green/meshes/sensor_green.mtl
+[3.713s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/sensor_green/meshes/sensor_green.obj
+[3.725s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/sensor_green/model.config
+[3.734s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/sensor_green/model.sdf
+[3.744s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/sensor_red/meshes/sensor_red.mtl
+[3.755s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/sensor_red/meshes/sensor_red.obj
+[3.765s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/sensor_red/model.config
+[3.775s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/sensor_red/model.sdf
+[3.784s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/suspended_landing_platform/meshes/suspended_landing_platform.mtl
+[3.793s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/suspended_landing_platform/meshes/suspended_landing_platform.obj
+[3.801s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/suspended_landing_platform/model.config
+[3.809s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/suspended_landing_platform/model.sdf
+[3.817s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/takeoff_platform/meshes/takeoff_platform.mtl
+[3.826s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/takeoff_platform/meshes/takeoff_platform.obj
+[3.837s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/takeoff_platform/model.config
+[3.847s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/takeoff_platform/model.sdf
+[3.859s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/unit_box/model.config
+[3.868s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/unit_box/model.sdf
+[3.879s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/worlds/stage_five.world
+[3.890s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/worlds/stage_four.world
+[3.899s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/worlds/stage_one.world
+[3.911s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/worlds/stage_three.world
+[3.921s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/worlds/stage_two.world
+[3.931s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/worlds/stage_vision.world
+[3.942s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/worlds/vision_ia.world
+[3.951s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/scripts/asyncio
+[3.963s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/scripts/base_spawner.py
+[3.974s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/scripts/run_docker.sh
+[3.983s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/scripts/takeoff_sdk.py
+[3.994s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/lib/laser_challenge_simulation/base_spawner.py
+[4.005s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/lib/laser_challenge_simulation/takeoff_sdk.py
+[4.014s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/ament_index/resource_index/package_run_dependencies/laser_challenge_simulation
+[4.027s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/ament_index/resource_index/parent_prefix_path/laser_challenge_simulation
+[4.040s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/environment/ament_prefix_path.sh
+[4.048s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/environment/ament_prefix_path.dsv
+[4.060s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/environment/path.sh
+[4.069s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/environment/path.dsv
+[4.078s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/local_setup.bash
+[4.088s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/local_setup.sh
+[4.096s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/local_setup.zsh
+[4.109s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/local_setup.dsv
+[4.117s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/package.dsv
+[4.129s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/ament_index/resource_index/packages/laser_challenge_simulation
+[4.142s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/cmake/laser_challenge_simulationConfig.cmake
+[4.151s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/cmake/laser_challenge_simulationConfig-version.cmake
+[4.163s] -- Symlinking: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/package.xml
+[4.177s] Invoked command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation

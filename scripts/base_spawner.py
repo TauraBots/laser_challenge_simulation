@@ -2,7 +2,6 @@
 import random
 import rclpy
 from rclpy.node import Node
-# Mudança para ros_gz_interfaces no Harmonic
 from ros_gz_interfaces.srv import SpawnEntity
 from geometry_msgs.msg import Pose
 from ament_index_python.packages import get_package_share_directory
@@ -25,7 +24,8 @@ class BaseSpawner(Node):
         super().__init__('base_spawner')
         
 
-        self.client = self.create_client(SpawnEntity, '/world/default/create')      
+        self.client = self.create_client(SpawnEntity, '/world/default/create')   
+           
 
         while not self.client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Serviço /spawn_entity (GZ Sim) não disponível, a aguardar...')
