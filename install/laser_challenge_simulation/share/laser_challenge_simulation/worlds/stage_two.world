@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="default">
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <gui fullscreen="0">
+      <camera name="user_camera">
+        <pose>15 2 10 0 0.6 -2.64</pose>
+      </camera>
+    </gui>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>250 250 600 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>0 0 -1</direction>
+    </light>
+
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><plane><normal>0 0 1</normal><size>250 250</size></plane></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><plane><normal>0 0 1</normal><size>250 250</size></plane></geometry>
+          <material><ambient>0.3 0.5 0.3 1</ambient><diffuse>0.3 0.5 0.3 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <include><name>arena</name><uri>model://arena_spawn</uri><pose>-0.75 -7.0 0.001 0 0 0</pose></include>
+    <include><name>takeoff_platform</name><uri>model://takeoff_platform</uri><pose>0 0 0 0 0 0</pose></include>
+    <include><name>banner</name><uri>model://banner</uri><pose>-0.75 -6.9 0 0 0 0</pose></include>
+    <include><name>banner_2</name><uri>model://banner_2</uri><pose>-0.65 1.0 0 0 0 -1.57</pose></include>
+    <include><name>landing_platform_A</name><uri>model://suspended_landing_platform</uri><pose>2.75 0.0 1.0 0 0 0</pose></include>
+    <include><name>landing_platform_E</name><uri>model://suspended_landing_platform</uri><pose>0.0 -6.0 1.5 0 0 0</pose></include>
+    <include><name>barcodeshelf</name><uri>model://barcode_shelf</uri><pose>5.0 -6.45 0.0 0.0 0.0 1.57</pose></include>
+
+    <include><name>box_A0</name><uri>model://box_A0</uri><pose>4.0 -6.375 2.55 0 0 0</pose></include>
+    <include><name>box_A1</name><uri>model://box_A1</uri><pose>4.5 -6.375 2.55 0 1.57 0</pose></include>
+    <include><name>box_A2</name><uri>model://box_A2</uri><pose>3.0 -6.375 2.55 0 0 0</pose></include>
+    <include><name>box_A3</name><uri>model://box_A3</uri><pose>3.5 -6.375 2.55 0 1.57 0</pose></include>
+    <include><name>box_B0</name><uri>model://box_B0</uri><pose>3.5 -6.375 2.05 0 1.57 0</pose></include>
+    <include><name>box_B1</name><uri>model://box_B1</uri><pose>4.0 -6.375 2.05 0 1.57 0</pose></include>
+    <include><name>box_B2</name><uri>model://box_B2</uri><pose>3.0 -6.375 2.05 0 0 0</pose></include>
+    <include><name>box_B3</name><uri>model://box_B3</uri><pose>4.5 -6.375 2.05 0 0 0</pose></include>
+    <include><name>box_C0</name><uri>model://box_C0</uri><pose>3.5 -6.375 1.55 0 1.57 0</pose></include>
+    <include><name>box_C1</name><uri>model://box_C1</uri><pose>2.0 -6.375 1.55 0 1.57 0</pose></include>
+    <include><name>box_C2</name><uri>model://box_C2</uri><pose>3.0 -6.375 1.55 0 0 0</pose></include>
+    <include><name>box_C3</name><uri>model://box_C3</uri><pose>4.0 -6.375 1.55 0 0 0</pose></include>
+    <include><name>box_D0</name><uri>model://box_D0</uri><pose>3.0 -6.375 1.05 0 1.57 0</pose></include>
+    <include><name>box_D1</name><uri>model://box_D1</uri><pose>4.0 -6.375 1.05 0 1.57 0</pose></include>
+    <include><name>box_D2</name><uri>model://box_D2</uri><pose>2.5 -6.375 1.05 0 0 0</pose></include>
+    <include><name>box_D3</name><uri>model://box_D3</uri><pose>3.5 -6.375 1.05 0 0 0</pose></include>
+  </world>
+</sdf>

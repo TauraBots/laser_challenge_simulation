@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>laser_challenge_simulation</name>
+  <version>1.0.1</version>
+  <description>drone trials league sandbox pack ported to ROS 2 Harmonic</description>
+  <maintainer email="avfs@academico.ufpb.br">Augusto Vinicius F de sales</maintainer>
+  <license>apache_license_2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclpy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>ament_index_python</depend>
+  <depend>ros_gz_sim</depend>
+  <depend>ros_gz_bridge</depend>
+  <depend>ros_gz_interfaces</depend>
+  <exec_depend>mavros</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

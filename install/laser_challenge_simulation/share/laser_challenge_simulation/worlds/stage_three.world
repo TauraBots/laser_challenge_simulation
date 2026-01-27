@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="default">
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <gui fullscreen="0">
+      <camera name="user_camera">
+        <pose>15 2 10 0 0.6 -2.64</pose>
+      </camera>
+    </gui>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>250 250 600 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>0 0 -1</direction>
+    </light>
+
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><plane><normal>0 0 1</normal><size>250 250</size></plane></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><plane><normal>0 0 1</normal><size>250 250</size></plane></geometry>
+          <material>
+            <ambient>0.3 0.5 0.3 1</ambient>
+            <diffuse>0.3 0.5 0.3 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <include><name>arena</name><uri>model://arena_spawn</uri><pose>-0.75 -7.0 0.001 0 0 0</pose></include>
+    <include><name>takeoff_platform</name><uri>model://takeoff_platform</uri><pose>0 0 0 0 0 0</pose></include>
+    <include><name>banner</name><uri>model://banner</uri><pose>-0.75 -6.9 0 0 0 0</pose></include>
+    <include><name>banner_2</name><uri>model://banner_2</uri><pose>-0.65 1.0 0 0 0 -1.57</pose></include>
+
+    <include><name>landing_platform_A</name><uri>model://suspended_landing_platform</uri><pose>2.75 0.0 1.0 0 0 0</pose></include>
+    <include><name>landing_platform_E</name><uri>model://suspended_landing_platform</uri><pose>0.0 -6.0 1.5 0 0 0</pose></include>
+
+    <include><name>QRCode_box_A</name><uri>model://qrcode_box_a</uri><pose>0 -6.0 1.65 0 0 0</pose></include>
+    <include><name>QRCode_box_E</name><uri>model://qrcode_box_e</uri><pose>2.75 0.0 1.15 0 0 0</pose></include>
+    <include><name>QRCode_box_B</name><uri>model://qrcode_box_b</uri><pose>3 -5.5 0.01 0 0 0</pose></include>
+    <include><name>QRCode_box_C</name><uri>model://qrcode_box_c</uri><pose>0.75 -2.75 0.01 0 0 0</pose></include>
+    <include><name>QRCode_box_D</name><uri>model://qrcode_box_d</uri><pose>5.25 -2.5 0.01 0 0 0</pose></include>
+
+    <include><name>landing_platform_B</name><uri>model://landing_platform</uri><pose>5.25 -2.5 0.005 0 0 0</pose></include>
+    <include><name>landing_platform_C</name><uri>model://landing_platform</uri><pose>3 -5.5 0.005 0 0 0</pose></include>
+    <include><name>landing_platform_D</name><uri>model://landing_platform</uri><pose>0.75 -2.75 0.005 0 0 0</pose></include>
+
+  </world>
+</sdf>
