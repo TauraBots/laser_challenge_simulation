@@ -1,0 +1,2 @@
+/home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/config/taura_mavros_params.yaml
+/home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/package.dsv

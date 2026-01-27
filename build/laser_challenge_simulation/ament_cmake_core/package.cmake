@@ -5,7 +5,7 @@ set(laser_challenge_simulation_BUILD_DEPENDS "rclpy" "geometry_msgs" "sensor_msg
 set(laser_challenge_simulation_BUILDTOOL_DEPENDS "ament_cmake")
 set(laser_challenge_simulation_BUILD_EXPORT_DEPENDS "rclpy" "geometry_msgs" "sensor_msgs" "ament_index_python" "ros_gz_sim" "ros_gz_bridge" "ros_gz_interfaces")
 set(laser_challenge_simulation_BUILDTOOL_EXPORT_DEPENDS )
-set(laser_challenge_simulation_EXEC_DEPENDS "rclpy" "geometry_msgs" "sensor_msgs" "ament_index_python" "ros_gz_sim" "ros_gz_bridge" "ros_gz_interfaces")
+set(laser_challenge_simulation_EXEC_DEPENDS "mavros" "rclpy" "geometry_msgs" "sensor_msgs" "ament_index_python" "ros_gz_sim" "ros_gz_bridge" "ros_gz_interfaces")
 set(laser_challenge_simulation_TEST_DEPENDS )
 set(laser_challenge_simulation_GROUP_DEPENDS )
 set(laser_challenge_simulation_MEMBER_OF_GROUPS )

@@ -1,0 +1,141 @@
+[0.009s] Invoking command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angelistao/laser_challenge_simulation -DCMAKE_INSTALL_PREFIX=/home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation
+[0.202s] -- The C compiler identification is GNU 11.4.0
+[0.403s] -- The CXX compiler identification is GNU 11.4.0
+[0.420s] -- Detecting C compiler ABI info
+[0.485s] -- Detecting C compiler ABI info - done
+[0.495s] -- Check for working C compiler: /usr/lib/ccache/cc - skipped
+[0.495s] -- Detecting C compile features
+[0.496s] -- Detecting C compile features - done
+[0.500s] -- Detecting CXX compiler ABI info
+[0.567s] -- Detecting CXX compiler ABI info - done
+[0.576s] -- Check for working CXX compiler: /usr/lib/ccache/c++ - skipped
+[0.576s] -- Detecting CXX compile features
+[0.576s] -- Detecting CXX compile features - done
+[0.583s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.975s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.090s] -- Found rclpy: 3.3.19 (/opt/ros/humble/share/rclpy/cmake)
+[1.160s] -- Configuring done
+[1.163s] -- Generating done
+[1.164s] -- Build files have been written to: /home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation
+[1.168s] Invoked command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angelistao/laser_challenge_simulation -DCMAKE_INSTALL_PREFIX=/home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation
+[1.170s] Invoking command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation -- -j8 -l8
+[1.204s] Invoked command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation -- -j8 -l8
+[1.214s] Invoking command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation
+[1.220s] -- Install configuration: ""
+[1.220s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/launch
+[1.220s] -- Installing: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/launch/drone_launch.py
+[1.220s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models
+[1.220s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_b
+[1.221s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_b/meshes
+[1.221s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_b/meshes/materials
+[1.221s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D3
+[1.221s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D3/meshes
+[1.221s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D3/meshes/materials
+[1.221s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/takeoff_platform
+[1.221s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/takeoff_platform/meshes
+[1.221s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_land_base
+[1.221s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_land_base/meshes
+[1.221s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_land_base/meshes/materials
+[1.221s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner
+[1.221s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner/meshes
+[1.222s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner/meshes/materials
+[1.222s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D1
+[1.222s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D1/meshes
+[1.222s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D1/meshes/materials
+[1.222s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/unit_box
+[1.222s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/suspended_landing_platform
+[1.222s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/suspended_landing_platform/meshes
+[1.222s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A1
+[1.222s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A1/meshes
+[1.222s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A1/meshes/materials
+[1.223s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D0
+[1.223s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D0/meshes
+[1.223s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D0/meshes/materials
+[1.223s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A0
+[1.223s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A0/meshes
+[1.223s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A0/meshes/materials
+[1.223s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/pipe
+[1.223s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/pipe/meshes
+[1.223s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_c
+[1.223s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_c/meshes
+[1.223s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_c/meshes/materials
+[1.223s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C2
+[1.224s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C2/meshes
+[1.224s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C2/meshes/materials
+[1.224s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf
+[1.224s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes
+[1.224s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/barcode_shelf/meshes/material
+[1.224s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/grass_plane
+[1.224s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/grass_plane/meshes
+[1.224s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/grass_plane/meshes/materials
+[1.224s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C0
+[1.224s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C0/meshes
+[1.224s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C0/meshes/materials
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_a
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_a/meshes
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_a/meshes/materials
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B0
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B0/meshes
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B0/meshes/materials
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B3
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B3/meshes
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B3/meshes/materials
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/landing_platform
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/landing_platform/meshes
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_right
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_right/meshes
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_right/meshes/materials
+[1.225s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_d
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_d/meshes
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_d/meshes/materials
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A3
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A3/meshes
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A3/meshes/materials
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/sensor_red
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/sensor_red/meshes
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D2
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D2/meshes
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_D2/meshes/materials
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/iris
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/iris/meshes
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_e
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_e/meshes
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/qrcode_box_e/meshes/materials
+[1.226s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/sensor_green
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/sensor_green/meshes
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A2
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A2/meshes
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_A2/meshes/materials
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner_2
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner_2/meshes
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/banner_2/meshes/materials
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B1
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B1/meshes
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B1/meshes/materials
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C3
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C3/meshes
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C3/meshes/materials
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_left
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_left/meshes
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/measure_gas_high_base_left/meshes/materials
+[1.227s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C1
+[1.228s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C1/meshes
+[1.228s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_C1/meshes/materials
+[1.228s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/landing_platform_movel
+[1.228s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/landing_platform_movel/meshes
+[1.229s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B2
+[1.229s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B2/meshes
+[1.229s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/box_B2/meshes/materials
+[1.229s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn
+[1.229s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/models/arena_spawn/meshes
+[1.229s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/worlds
+[1.229s] -- Up-to-date: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/scripts
+[1.229s] -- Installing: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/config
+[1.229s] -- Installing: /home/angelistao/laser_challenge_simulation/install/laser_challenge_simulation/share/laser_challenge_simulation/config/taura_mavros_params.yaml
+[1.229s] [31mCMake Error at cmake_install.cmake:56 (file):
+[1.229s]   file INSTALL cannot find
+[1.229s]   "/home/angelistao/laser_challenge_simulation/scripts/takeoff_sdk.py": No
+[1.229s]   such file or directory.
+[1.229s] 
+[1.229s] [0m
+[1.230s] Invoked command in '/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation
