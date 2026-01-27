@@ -1,1 +1,0 @@
-/home/angelistao/laser_challenge_simulation/scripts/run_docker.sh

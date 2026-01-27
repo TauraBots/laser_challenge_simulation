@@ -1,6 +1,0 @@
-[31mCMake Error at cmake_install.cmake:56 (file):
-  file INSTALL cannot find
-  "/home/angelistao/laser_challenge_simulation/scripts/takeoff_sdk.py": No
-  such file or directory.
-
-[0m

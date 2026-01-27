@@ -1,9 +1,0 @@
-/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation/CMakeFiles/uninstall.dir
-/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation/CMakeFiles/laser_challenge_simulation_uninstall.dir
-/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation/CMakeFiles/test.dir
-/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation/CMakeFiles/edit_cache.dir
-/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation/CMakeFiles/rebuild_cache.dir
-/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation/CMakeFiles/list_install_components.dir
-/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation/CMakeFiles/install.dir
-/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation/CMakeFiles/install/local.dir
-/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation/CMakeFiles/install/strip.dir

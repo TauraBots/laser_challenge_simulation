@@ -1,1 +1,0 @@
-/home/angelistao/laser_challenge_simulation/build/laser_challenge_simulation/ament_cmake_environment_hooks/local_setup.zsh
